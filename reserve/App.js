@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import ReviewDetails from './screens/ReviewDetails';
 
 
 import * as Font from "expo-font";
@@ -30,11 +29,11 @@ export default function App() {
         fontsLoaded ? 
         <Text style={{ fontFamily: 'Nunito-Bold', fontSize: 30 }}>Inter Black</Text>
         :
-        <Text style={{ fontSize: 30 }}>Inter Black</Text>
+        <Text style={{ fontSize: 30 }}>SOMETHING</Text>
       }
       
       <Text style={{ fontSize: 30 }}>Platform Default</Text>
-      <ReviewDetails />    
+
     </View>
       
   );

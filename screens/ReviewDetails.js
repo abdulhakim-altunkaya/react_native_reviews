@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 function ReviewDetails() {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} >
         <Text>
             Review Details
         </Text>
