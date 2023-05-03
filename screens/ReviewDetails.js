@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { globalStyles } from '../styles/GlobalStyles';
 
 
 function ReviewDetails() {
   return (
-    <View style={styles.container} >
-        <Text>
+    <View style={globalStyles.container} >
+        <Text style={globalStyles.titleText}>
             Review Details
         </Text>
     </View>
@@ -13,10 +14,5 @@ function ReviewDetails() {
 }
 
 
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "pink",
-    },
-})
 
 export default ReviewDetails;

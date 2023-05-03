@@ -1,43 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ReviewDetails from './screens/ReviewDetails';
+import Home from "./screens/Home";
 
-
-import * as Font from "expo-font";
-
-const getFonts = () => {
-  return Font.loadAsync({
-    "Nunito-Regular": require("./assets/fonts/Nunito-Regular.ttf"),
-    "Nunito-Bold": require("./assets/fonts/Nunito-Bold.ttf"),
-  })
-}
-
-
+import { useFonts } from "expo-font";
 
 
 export default function App() {
-  const getFonts2 = async () => {
-    await getFonts();
-    setFontsLoaded(true);
+  const [loaded] = useFonts({
+    NunitoRegular: require("./assets/fonts/Nunito-Regular.ttf"),
+    NunitoBold: require("./assets/fonts/Nunito-Bold.ttf"),
+  });
+  
+  if (!loaded) {
+    return null;
   }
-  getFonts2();
-  const [fontsLoaded, setFontsLoaded] = useState(false);
-
   return (
 
     <View >
-      {
-        fontsLoaded ? 
-        <Text style={{ fontFamily: 'Nunito-Bold', fontSize: 30 }}>Inter Black</Text>
-        :
-        <Text style={{ fontSize: 30 }}>Inter Black</Text>
-      }
-      
-      <Text style={{ fontSize: 30 }}>Platform Default</Text>
-      <ReviewDetails />    
+      <ReviewDetails />
+      <Home />    
     </View>
       
   );
 }
-
 
